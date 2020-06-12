@@ -15,10 +15,8 @@ public class RestControllerExceptionHandler extends ResponseEntityExceptionHandl
 
     @ExceptionHandler(NoSuchElementException.class)
     protected ResponseEntity<Object> handleConflict(RuntimeException ex, WebRequest request) {
-
         String body = "Element not found";
         return handleExceptionInternal(ex, body, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
-
     }
 
 }

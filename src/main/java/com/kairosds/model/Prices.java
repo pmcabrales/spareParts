@@ -17,23 +17,22 @@ public class Prices {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long priceId;
 
-    @ApiModelProperty(notes = "foreign key de la cadena del grupo (1 = ZARA)")
+    @ApiModelProperty(notes = "Store group foreign key (1 = ZARA)")
     private long brandId;
-    @ApiModelProperty(notes = "rango de fechas en el que aplica el precio tarifa indicado")
+    @ApiModelProperty(notes = "Date when the price starts to apply for the product")
     private LocalDateTime startDate;
-    @ApiModelProperty(notes = "rango de fechas en el que aplica el precio tarifa indicado")
+    @ApiModelProperty(notes = "Date when the price ends to apply for the product")
     private LocalDateTime endDate;
-    @ApiModelProperty(notes = "Identificador de la tarifa de precios aplicable")
+    @ApiModelProperty(notes = "Applied fare id")
     private long priceList;
-    @ApiModelProperty(notes = "Identificador código de producto")
+    @ApiModelProperty(notes = "Product code id")
     private long productId;
-    @ApiModelProperty(notes = "Desambiguador de aplicación de precios. Si dos tarifas coinciden en un rago de fechas se aplica la de mayor prioridad (mayor valor numérico)")
+    @ApiModelProperty(notes = "Tiebreaker. If two fares applies at the same time the one with more priority is selected (numeric)")
     private int priority;
-    @ApiModelProperty(notes = "precio final de venta")
+    @ApiModelProperty(notes = "Final price")
     private float price;
-    @ApiModelProperty(notes = "iso de la moneda")
+    @ApiModelProperty(notes = "Currency ISO")
     private String curr;
-
 
     public Prices() {
     }
@@ -53,64 +52,28 @@ public class Prices {
         return priceId;
     }
 
-    public void setPriceId(long priceId) {
-        this.priceId = priceId;
-    }
-
     public long getBrandId() {
         return brandId;
-    }
-
-    public void setBrandId(long brandId) {
-        this.brandId = brandId;
     }
 
     public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDateTime startDate) {
-        this.startDate = startDate;
-    }
-
     public LocalDateTime getEndDate() {
         return endDate;
-    }
-
-    public void setEndDate(LocalDateTime endDate) {
-        this.endDate = endDate;
     }
 
     public long getPriceList() {
         return priceList;
     }
 
-    public void setPriceList(long priceList) {
-        this.priceList = priceList;
-    }
-
     public long getProductId() {
         return productId;
     }
 
-    public void setProductId(long productId) {
-        this.productId = productId;
-    }
-
-    public void setPriority(int priority) {
-        this.priority = priority;
-    }
-
     public float getPrice() {
         return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public void setCurr(String curr) {
-        this.curr = curr;
     }
 
 }
