@@ -1,9 +1,9 @@
 package com.kairosds.service;
 
-import com.kairosds.model.Prices;
+import com.kairosds.model.Price;
 
 import java.util.Optional;
 
 public interface PricesService {
-    Optional<Prices> getProductPriceForDate(String date, long productId, long brandId);
+    Optional<Price> getProductPriceForDate(String date, long productId, long brandId);
 }
