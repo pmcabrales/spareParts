@@ -1,6 +1,6 @@
-package com.kairosds.controller;
+package gw.workshop.controller;
 
-import com.kairosds.model.Price;
+import gw.workshop.model.Price;
 import io.swagger.annotations.*;
 
 @Api
@@ -12,7 +12,6 @@ public interface PricesController {
             @ApiResponse(code = 400, message = "Bad request: Possibly is missing a request attribute")})
     Price getProductPrice(
             @ApiParam(value = "Date of the price for the product", format = "yyyy-MM-dd-HH.mm.ss", required = true) String date,
-            @ApiParam(value = "Product id", required = true) long productId,
-            @ApiParam(value = "Brand id", required = true) long brandId);
+            @ApiParam(value = "Product id", required = true) long productId);
 
 }

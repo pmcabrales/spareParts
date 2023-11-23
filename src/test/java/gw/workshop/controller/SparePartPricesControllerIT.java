@@ -1,4 +1,4 @@
-package com.kairosds.controller;
+package gw.workshop.controller;
 
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;

@@ -1,8 +1,8 @@
-package com.kairosds.service.impl;
+package gw.workshop.service.impl;
 
-import com.kairosds.model.Price;
-import com.kairosds.repository.PricesRepository;
-import com.kairosds.service.PricesService;
+import gw.workshop.model.Price;
+import gw.workshop.repository.PricesRepository;
+import gw.workshop.service.PricesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +16,10 @@ public class PricesServiceImpl implements PricesService {
     @Autowired
     private PricesRepository pricesRepository;
 
-    public Optional<Price> getProductPriceForDate(String date, long productId, long brandId) {
+    public Optional<Price> getProductPriceForDate(String date, long productId) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH.mm.ss");
         LocalDateTime dateTime = LocalDateTime.parse(date, formatter);
-        Price price = pricesRepository.findFirstByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(productId, brandId, dateTime, dateTime);
+        Price price = pricesRepository.findFirstByProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(productId, dateTime, dateTime);
 
         return Optional.ofNullable(price);
     }

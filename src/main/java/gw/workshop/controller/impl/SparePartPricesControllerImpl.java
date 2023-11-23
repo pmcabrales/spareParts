@@ -1,8 +1,8 @@
-package com.kairosds.controller.impl;
+package gw.workshop.controller.impl;
 
-import com.kairosds.controller.PricesController;
-import com.kairosds.model.Price;
-import com.kairosds.service.PricesService;
+import gw.workshop.controller.PricesController;
+import gw.workshop.model.Price;
+import gw.workshop.service.SparePartPricesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,12 +14,12 @@ import java.util.Optional;
 public class PricesControllerImpl implements PricesController {
 
     @Autowired
-    private PricesService pricesService;
+    private SparePartPricesService sparePartPricesService;
 
     @GetMapping("/prices")
     @ResponseStatus(HttpStatus.OK)
-    public Price getProductPrice(@RequestParam String date, @RequestParam long productId, @RequestParam long brandId){
-        Optional<Price> prices = pricesService.getProductPriceForDate(date,productId,brandId);
+    public Price getProductPrice(@RequestParam String date, @RequestParam long productId){
+        Optional<Price> prices = sparePartPricesService.getProductPriceForDate(date,productId);
         if (!prices.isPresent()) throw new NoSuchElementException();
         return prices.get();
      }
