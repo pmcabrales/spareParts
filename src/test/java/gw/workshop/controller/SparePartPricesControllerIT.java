@@ -17,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class PricesControllerIT {
+public class SparePartPricesControllerIT {
 
     @Autowired
     protected MockMvc mockMvc;

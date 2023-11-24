@@ -1,4 +1,4 @@
-package com.kairosds.model;
+package gw.workshop.model;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,19 +22,13 @@ public class Price {
     @Getter
     private long priceId;
 
-    @ApiModelProperty(notes = "Store group foreign key (1 = ZARA)")
-    @Getter
-    private long brandId;
     @ApiModelProperty(notes = "Date when the price starts to apply for the product")
     @Getter
     private LocalDateTime startDate;
     @ApiModelProperty(notes = "Date when the price ends to apply for the product")
     @Getter
     private LocalDateTime endDate;
-    @ApiModelProperty(notes = "Applied fare id")
-    @Getter
-    private long priceList;
-    @ApiModelProperty(notes = "Product code id")
+    @ApiModelProperty(notes = "Spare Part foreing key")
     @Getter
     private long productId;
     @ApiModelProperty(notes = "Tiebreaker. If two fares applies at the same time the one with more priority is selected (numeric)")
@@ -44,4 +38,9 @@ public class Price {
     private float price;
     @ApiModelProperty(notes = "Currency ISO")
     private String curr;
+
+    @Override
+    public String toString() {
+        return price + " " + curr;
+    }
 }

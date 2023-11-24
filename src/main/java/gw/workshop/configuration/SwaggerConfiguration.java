@@ -1,4 +1,4 @@
-package com.kairosds.configuration;
+package gw.workshop.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,7 @@ import java.util.Set;
 @EnableSwagger2
 public class SwaggerConfiguration {
 
-	public static final Contact DEFAULT_CONTACT = new Contact("Kairos DS", "https:://kairosds.com", "kairosds@kairosds.com");
+	public static final Contact DEFAULT_CONTACT = new Contact("Guidewire", "https:://www.guidewire.com", "pmartnezcabrales@guidewire.com");
 	
 	public static final ApiInfo DEFAULT_API_INFO = new ApiInfo(
 			"Prices Api", "Prices Api Documentation", "1.0",
@@ -36,7 +36,7 @@ public class SwaggerConfiguration {
 				.produces(DEFAULT_PRODUCES_AND_CONSUMES)
 				.consumes(DEFAULT_PRODUCES_AND_CONSUMES)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.kairosds"))
+				.apis(RequestHandlerSelectors.basePackage("gw.workshop"))
 				.paths(PathSelectors.any())
 				.build();
 	}

@@ -1,4 +1,4 @@
-package com.kairosds.exception;
+package gw.workshop.exception;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
